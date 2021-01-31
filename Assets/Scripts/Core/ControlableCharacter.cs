@@ -9,8 +9,8 @@ namespace Core
         public MotionCaption MotionCaption;
 
         [Header("Options")]
-        public bool[] IsControable;
         public byte[] CompareMap;
+        public float[] YOffset;
 
         private Transform[] _boneContainrs;
 
@@ -25,25 +25,24 @@ namespace Core
 
             for (int i = 0; i < _boneContainrs.Length; i++)
             {
-                _boneContainrs[i] = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
-                GameObject.Destroy(_boneContainrs[i].GetComponent<MeshFilter>());
-                GameObject.Destroy(_boneContainrs[i].GetComponent<MeshRenderer>());
-                GameObject.Destroy(_boneContainrs[i].GetComponent<BoxCollider>());
-
-                _boneContainrs[i].parent = CharactersSkeleton.bones[i].parent;
-                _boneContainrs[i].position = CharactersSkeleton.bones[i].position;
-
-                if (i < IsControable.Length)
-                {
-                    if (IsControable[i])
-                    {
-                        _boneContainrs[i].parent = CharactersSkeleton.root;
-                        _boneContainrs[i].Rotate(new Vector3(0, 180, 0), Space.World);
-                    }
-                }
-
-                CharactersSkeleton.bones[i].parent = _boneContainrs[i];
+                _boneContainrs[i] = CreateEmptyObject();
+                Transform bone = _boneContainrs[i];
+                
+                bone.parent = CharactersSkeleton.bones[i].parent;
+                bone.position = CharactersSkeleton.bones[i].position;
+                bone.Rotate(new Vector3(0, i < YOffset.Length ? 180 - YOffset[i] : 0, 0), Space.World);
+                CharactersSkeleton.bones[i].parent = bone;
             }
+        }
+
+        private Transform CreateEmptyObject()
+        {
+            GameObject t1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            GameObject.Destroy(t1.GetComponent<MeshFilter>());
+            GameObject.Destroy(t1.GetComponent<MeshRenderer>());
+            GameObject.Destroy(t1.GetComponent<BoxCollider>());
+            t1.name = "container";
+            return t1.transform;
         }
 
         // Update is called once per frame
@@ -52,6 +51,7 @@ namespace Core
             for (byte i = 0; i < _boneContainrs.Length; i++)
             {
                 _boneContainrs[i].rotation = MotionCaption.GetSensorRotation(i < CompareMap.Length ? CompareMap[i] : i);
+                _boneContainrs[i].Rotate(new Vector3(0, i < YOffset.Length ? -YOffset[i] : 0, 0), Space.World);
             }
         }
     }

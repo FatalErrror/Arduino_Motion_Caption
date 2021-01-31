@@ -1292,8 +1292,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharactersSkeleton: {fileID: 7109916591694682615}
   MotionCaption: {fileID: 0}
-  IsControable: 0101010101010101
   CompareMap: 0403050607020100
+  YOffset:
+  - 0
+  - 180
+  - -90
+  - -90
+  - -90
+  - 90
+  - 90
+  - 90
 --- !u!114 &7109916591694682615
 MonoBehaviour:
   m_ObjectHideFlags: 0
