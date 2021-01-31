@@ -101,9 +101,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6034140996545143262}
-  - component: {fileID: 5980174973442992300}
-  - component: {fileID: -6316349842486442876}
-  - component: {fileID: 6360045255156142761}
+  - component: {fileID: 6150069659152416687}
+  - component: {fileID: 1317305045570909300}
   m_Layer: 0
   m_Name: Rin Prefab
   m_TagString: Untagged
@@ -127,26 +126,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5980174973442992300
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028128244844866044}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: aa5b460e6ecf054499bd23c192b47870, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6316349842486442876
+--- !u!114 &6150069659152416687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +135,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 6028128244844866044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e851bf3382b52f64fa08dd2d3785e993, type: 3}
+  m_Script: {fileID: 11500000, guid: 118ff7b22d67842489b87eb201e88df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharactersSkeleton: {fileID: 1317305045570909300}
+  MotionCaption: {fileID: 0}
+  CompareMap: 0403050607020100
+  YOffset:
+  - 0
+  - 180
+  - -90
+  - -90
+  - -90
+  - 90
+  - 90
+  - 90
+--- !u!114 &1317305045570909300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028128244844866044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d9e15d7d073ed4ebddad2b19654b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 6026935618706472326}
@@ -173,20 +177,6 @@ MonoBehaviour:
   _leftLeg: {fileID: 6026837087167986550}
   _leftKnee: {fileID: 6026661265347953760}
   _leftAnkle: {fileID: 6026528014273453440}
---- !u!114 &6360045255156142761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028128244844866044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853844316e1c8114eabc5ce3e56a7924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CharactersSkeleton: {fileID: -6316349842486442876}
-  FromVirtualSkeleton: {fileID: 0}
 --- !u!1 &6028129662134253776
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +512,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028167063985328254}
   m_ConnectedBody: {fileID: 3357867514290333212}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -1253,6 +1244,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028314950847280508}
   m_ConnectedBody: {fileID: 6657660722857271190}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -2666,6 +2658,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028584833200624156}
   m_ConnectedBody: {fileID: 7766754638188301225}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -2948,6 +2941,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028617757865056024}
   m_ConnectedBody: {fileID: 1988126955989243625}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
